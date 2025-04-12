@@ -1,18 +1,47 @@
-<img src="./SavETH-logo.png" width="200" height="200"/>  
+<p align="center">
+  <img src="./SavETH-logo.png" width="200" height="200" alt="SavETH logo"/>
+</p>
 
-### Goal based micro-savings dapp!
+# SavETH – Goal-Based Micro-Savings dApp
 
-1. User defines a savings goal (for example, saving certain amount of money for a laptop).
-2. User deposits money in small amounts into the savings vault contract against this goal over time.
-3. Funds are only released to the users' wallet after the savings goal (enough funds have been saved for the purpose of buying the laptop) is reached.
-4. Users can define multiple goals.
+**Track:** Web3 – Blockchain  
+**Theme:** Finance  
 
-(Savings vault contract -> Users -> Goals -> Funds)  
-Savings vault contract:
-- User 1
-    - Goal 1 (laptop): 0.8 ETH saved (target: 2.5 ETH)
-    - Goal 2 (bag): 0.0001 ETH saved (target: 0.005 ETH)
-- User 2
-    - Goal 1 (car): 5 ETH saved (target: 15 ETH)
-    - Goal 2 (microwave oven): 0.5 ETH saved (target: 0.5 ETH, released)
-- so on...
+[🔗 Etherscan link (Optimism Sepolia)](https://sepolia-optimism.etherscan.io/address/0xD5e86470A713624138c2FdC77d376AAFf9383d02)  
+Deployed Contract Address: `0xD5e86470A713624138c2FdC77d376AAFf9383d02`
+
+🎥 [Click here to watch the Demo Video](./demo.mp4)  
+🧾 [Presentation Slides (Google Drive link)](https://www.google.com) 
+
+---
+
+## 🪙 What is SavETH?
+
+A decentralized savings vault where users define savings goals (like saving for a laptop or a vacation), deposit small amounts of ETH over time, and withdraw only once the goal is fully funded.
+
+---
+
+## ⚙️ How It Works:
+
+1. 🎯 User creates a savings goal (e.g., "Buy MacBook – 2 ETH").
+2. 💸 User deposits funds into that goal whenever they want.
+3. 🔒 Funds are **locked** until the goal is fully funded.
+4. 🔑 Once the target is reached, user can withdraw.
+
+---
+
+## 📊 Example (On-chain Storage):
+
+```javascript
+SavingsVault Contract  
+├── User 1  
+│   ├── Goal 0: "Laptop" – 0.8 / 2.5 ETH saved  
+│   └── Goal 1: "Bag" – 0.0001 / 0.005 ETH saved  
+├── User 2  
+│   ├── Goal 0: "Car" – 5 / 15 ETH saved  
+│   └── Goal 1: "Microwave" – 0.5 / 0.5 ETH saved ✅ (Withdrawable)
+```
+
+---
+
+Frontend coming soon...
