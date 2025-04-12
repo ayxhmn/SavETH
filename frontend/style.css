@@ -1,0 +1,170 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+  }
+  
+  h1 {
+    color: #2f4f4f;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    color: #333;
+    margin-top: 20px;
+    font-size: 1.5em;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 300px;
+    font-size: 1em;
+  }
+
+  textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 300px;
+    font-size: 1em;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+  
+  hr {
+    width: 80%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  #goalList {
+    width: 80%;
+    margin-top: 20px;
+  }
+  
+  .goal-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .goal-item h3 {
+    margin: 0;
+    font-size: 1.3em;
+  }
+  
+  .goal-item p {
+    margin: 5px 0;
+  }
+  
+  .goal-item button {
+    background-color: #2196F3;
+    margin-right: 10px;
+  }
+  
+  .goal-item button:hover {
+    background-color: #0b7dda;
+  }
+  
+  .status {
+    font-weight: bold;
+  }
+  
+  .status.in-progress {
+    color: #f39c12;
+  }
+  
+  .status.completed {
+    color: #27ae60;
+  }
+  
+  .status.not-reached {
+    color: #e74c3c;
+  }
+  
+  #connectButton {
+    background-color: #2d87f0;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #connectButton:hover {
+    background-color: #1f6cb1;
+  }
+  
+  #walletAddress {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+  }  
+
+  .goals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .goals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .goal-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .goal-column {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .goal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .goal-columns {
+      flex-direction: column;
+    }
+  }  
