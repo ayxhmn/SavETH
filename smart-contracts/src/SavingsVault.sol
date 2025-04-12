@@ -105,6 +105,9 @@ contract SavingsVault {
      */
     function withdraw(uint256 _goalId) external {
         Goal storage goal = s_userGoals[msg.sender][_goalId];
+        if (goal.targetAmount == 0) {
+            revert SavingsVault__GoalDoesNotExist();
+        }
         if (!goal.targetReached) {
             revert SavingsVault__TargetNotYetReached();
         }
