@@ -18,7 +18,7 @@ Deployed Contract Address: `0xD5e86470A713624138c2FdC77d376AAFf9383d02`
 
 [📃 Presentation Slides (Google Drive link)](https://docs.google.com/presentation/d/1mg00J5aPAmSwO-Z8WbiASxjcbDtX0xV_oZ6qXIRl5f8/edit?usp=sharing)
 
-[📽️ Demonstration Video link](www.google.com)
+[📽️ Demonstration Video link](https://drive.google.com/file/d/1XwKEjvey0fqzflMNOgss1LNxl5Xo0cmq/view?usp=sharing)
 
 ---
 
