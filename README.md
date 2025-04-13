@@ -11,6 +11,8 @@ A decentralized savings vault where users define savings goals (like saving for 
 **Track:** Web3 – Blockchain  
 **Theme:** Finance  
 
+[🌐 Deployed link (Netlify)](https://saveth.netlify.app/)
+
 [🔗 Etherscan link (Optimism Sepolia)](https://sepolia-optimism.etherscan.io/address/0xD5e86470A713624138c2FdC77d376AAFf9383d02)  
 Deployed Contract Address: `0xD5e86470A713624138c2FdC77d376AAFf9383d02`
 
