@@ -1,7 +1,9 @@
+// App-level variables
 let provider, signer, contract;
 const CONTRACT_ADDRESS = "0xD5e86470A713624138c2FdC77d376AAFf9383d02";
 let userAddress = "";
 
+// Connect wallet using MetaMask
 async function connectWallet() {
   if (window.ethereum) {
     provider = new ethers.BrowserProvider(window.ethereum);
@@ -9,6 +11,7 @@ async function connectWallet() {
     signer = await provider.getSigner();
     userAddress = await signer.getAddress();
 
+    // Update UI after connection
     document.getElementById("connectButton").textContent = "Connected";
     document.getElementById("connectButton").disabled = true;
     document.getElementById("disconnectButton").style.display = "inline-block";
@@ -22,17 +25,20 @@ async function connectWallet() {
   }
 }
 
+// Disconnect wallet (reloads the page)
 function disconnectWallet() {
   window.location.reload();
   alert("Wallet disconnected.");
 }
 
+// Load ABI and create contract instance
 async function initContract() {
   const res = await fetch("abi.json");
   const abi = await res.json();
   contract = new ethers.Contract(CONTRACT_ADDRESS, abi, signer);
 }
 
+// Set a username via the smart contract
 async function setUsername() {
   const name = document.getElementById("usernameInput").value;
   if (!name) return alert("Username cannot be empty");
@@ -42,6 +48,7 @@ async function setUsername() {
   await loadUsername();
 }
 
+// Load username from contract and update welcome message
 async function loadUsername() {
   const res = await fetch("abi.json");
   const abi = await res.json();
@@ -55,6 +62,7 @@ async function loadUsername() {
   }
 }
 
+// Create a new savings goal
 async function createGoal() {
   const name = document.getElementById("goalName").value;
   const desc = document.getElementById("goalDesc").value;
@@ -72,6 +80,7 @@ async function createGoal() {
   await loadGoals();
 }
 
+// Deposit ETH into a specific goal
 async function deposit(goalId) {
   const eth = prompt("Enter ETH to deposit:");
   if (!eth) return;
@@ -80,6 +89,7 @@ async function deposit(goalId) {
   await loadGoals();
 }
 
+// Withdraw from a completed goal
 async function withdraw(goalId) {
   const tx = await contract.withdraw(goalId);
   await tx.wait();
@@ -87,6 +97,7 @@ async function withdraw(goalId) {
   await loadGoals();
 }
 
+// Load and render all goals, separating completed and incomplete
 async function loadGoals() {
   const res = await fetch("abi.json");
   const abi = await res.json();
@@ -121,6 +132,7 @@ async function loadGoals() {
   });
 }
 
+// Toggle visibility of the completed goals section
 function toggleCompletedGoals() {
   const container = document.getElementById("completedGoalsContainer");
   const btn = document.getElementById("toggleCompletedBtn");
@@ -134,7 +146,7 @@ function toggleCompletedGoals() {
   }
 }
 
-// Wire up button events AFTER DOM loads
+// Button listeners once DOM is ready
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("connectButton").onclick = connectWallet;
   document.getElementById("disconnectButton").onclick = disconnectWallet;
@@ -142,17 +154,17 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("setUsernameButton").onclick = setUsername;
 });
 
-// Show username modal
+// Open the modal to set username
 document.getElementById("openUsernameModalButton").onclick = () => {
   document.getElementById("usernameModal").style.display = "flex";
 };
 
-// Hide modal
+// Close the username modal
 document.getElementById("closeUsernameModalButton").onclick = () => {
   document.getElementById("usernameModal").style.display = "none";
 };
 
-// Confirm and set username
+// Set the username from modal input
 document.getElementById("confirmUsernameButton").onclick = async () => {
   const name = document.getElementById("usernameInput").value.trim();
   if (!name) return alert("Please enter a username");
